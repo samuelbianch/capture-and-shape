@@ -8,18 +8,35 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  const [listXY, setListXY] = useState([]);
+  const [listXY, setListXY] : any = useState([]);
 
   const handler = (event:any) => {
 
-    const newDot = {
+    const newDot : any = {
       clientX: event.clientX,
       clientY: event.clientY
     };
 
     console.log(newDot);
+    setListXY((prev: any) => [...prev, newDot]);
+
   }
 
+  const handleDo = (event:any) => {
+    event.stopPropagation();
+    console.log("Do");
+  }
+
+  
+  const handleUnDo = (event:any) => {
+    event.stopPropagation();
+    console.log("Undo");
+
+    setListXY((prev:any) => {
+      const newArray = [...prev].splice(0, -1);
+      return newArray;
+    })
+  }
   return (
     <>
       <Head>
@@ -29,7 +46,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.page} onClick={handler} >
-        <div className={styles.dot}></div>
+        <button className={styles.buttons} onClick={handleDo}>Do</button>
+        <button className={styles.buttons} onClick={handleUnDo}>Undo</button>
+        {listXY.map((item:any) => ( 
+          <div
+            key={1}
+            className={ styles.dot } 
+            style={{ left: item.clientX, top: item.clientY }}
+          />  
+        ))}
       </div>
     </>
   )

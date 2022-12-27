@@ -1,8 +1,8 @@
 .page {
   position: fixed;
   display: block;
-  font-size: 90px;
-  background-color: red;
+  font-size: 16pt;
+  background-color: #d10000;
   width: 100%;
   height: 100%;
   top: 0;
@@ -15,4 +15,15 @@
   height: 30px;
   border-radius: 50%;
   background-color: black;
+  position: absolute;
+}
+
+.buttons {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
 }
