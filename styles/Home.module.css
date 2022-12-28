@@ -2,7 +2,7 @@
   position: fixed;
   display: block;
   font-size: 16pt;
-  background-color: #d10000;
+  background-color: #333333;
   width: 100%;
   height: 100%;
   top: 0;
@@ -11,19 +11,30 @@
 }
 
 .dot {
-  width: 30px;
-  height: 30px;
+  width: 1em;
+  height: 1em;
   border-radius: 50%;
-  background-color: black;
+  background-color: rgb(76, 0, 255);
   position: absolute;
 }
 
+.boxButton{
+  width: 100%;
+  bottom: 5%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  padding: auto;
+  justify-content: space-evenly;
+}
+
 .buttons {
-  background-color: black;
-  color: white;
+  background-color: rgb(211, 211, 211);
+  color: rgb(0, 0, 0);
   font-size: 20px;
   padding: 10px 60px;
   border-radius: 5px;
+  border-color: rgb(232, 223, 255);
   margin: 10px 0px;
   cursor: pointer;
 }
